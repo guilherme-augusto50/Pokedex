@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Pokemon
 {
-    internal class Pokemon
+    public class Pokemon
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
-        public List<PokemonType> Types { get; set; }
-        public List<PokemonAbility> Abilities { get; set; }
-    }
-    public class PokemonType
-    {
-        public string Type { get; set; }
-    }
+        public string Sprite { get; set; }
+        public string Sexo { get; set; }
+        public string imagem { get; set; }
 
-    public class PokemonAbility
-    {
-        public string Ability { get; set; }
+
+
     }
 }

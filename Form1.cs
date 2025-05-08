@@ -5,9 +5,9 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 namespace Pokemon
 {
-    public partial class Form1 : Form
+    public partial class pokedex : Form
     {
-        public Form1()
+        public pokedex()
         {
             InitializeComponent();
         }
@@ -22,34 +22,52 @@ namespace Pokemon
             WindowState = FormWindowState.Minimized;
         }
 
+        private void bntPesquisar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!txtID.Text.Equals(""))
+                {
+                    Pokemon pokemon = buscar_pesonagem.Buscar_pokemon(txtID.Text);
+                    lblID.Text = pokemon.Id.ToString();
+                    lblPokemon.Text = pokemon.Name.ToString();
+                    lblAltura.Text = pokemon.Height.ToString();
+                    lblPeso.Text = pokemon.Weight.ToString();
+                    try
+                    {
+                        picIconPokemon.ImageLocation = pokemon.imagem;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Imagem do Pokémon não pôde ser carregada.");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Digite um ID ou nome de Pokemon");
+                    txtID.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
+
 
         }
 
-        private void bntPesquisar_Click(object sender, EventArgs e)
-        {
-            string input = txtID.Text.Trim();
-
-            if (input.StartsWith("#")) {
-                input = input.Substring(1);
-            }
-
-            if
-        }
-
-
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblpeso_Click(object sender, EventArgs e)
+        private void picIconPokemon_Click(object sender, EventArgs e)
         {
 
         }

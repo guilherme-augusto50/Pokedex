@@ -1,6 +1,6 @@
 ﻿namespace Pokemon
 {
-    partial class Form1
+    partial class pokedex
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,34 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pokedex));
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            pictureBox4 = new PictureBox();
+            lblPokemon = new Label();
+            lblSexo = new Label();
+            picIconPokemon = new PictureBox();
+            lblPeso = new Label();
+            lblAltura = new Label();
+            lbltype = new Label();
+            lblID = new Label();
+            label3 = new Label();
             label14 = new Label();
-            lblnome = new Label();
-            lblid = new Label();
             label1 = new Label();
             txtID = new TextBox();
             label11 = new Label();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            label7 = new Label();
-            lblpeso = new Label();
-            lblTipo = new Label();
-            lblAltura = new Label();
-            lblSexo = new Label();
             bntPesquisar = new Button();
             pictureBox3 = new PictureBox();
-            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picIconPokemon).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -94,22 +93,21 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(lblPokemon);
+            panel2.Controls.Add(lblSexo);
+            panel2.Controls.Add(picIconPokemon);
+            panel2.Controls.Add(lblPeso);
+            panel2.Controls.Add(lblAltura);
+            panel2.Controls.Add(lbltype);
+            panel2.Controls.Add(lblID);
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(label14);
-            panel2.Controls.Add(lblnome);
-            panel2.Controls.Add(lblid);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(txtID);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(lblpeso);
-            panel2.Controls.Add(lblTipo);
-            panel2.Controls.Add(lblAltura);
-            panel2.Controls.Add(lblSexo);
             panel2.Controls.Add(bntPesquisar);
             panel2.Controls.Add(pictureBox3);
             panel2.Dock = DockStyle.Fill;
@@ -118,51 +116,97 @@
             panel2.Size = new Size(850, 470);
             panel2.TabIndex = 1;
             // 
-            // pictureBox4
+            // lblPokemon
             // 
-            pictureBox4.BackColor = Color.FromArgb(192, 255, 255);
-            pictureBox4.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox4.Image = Properties.Resources.icon_pokemon;
-            pictureBox4.Location = new Point(-532, -283);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(245, 286);
-            pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox4.TabIndex = 20;
-            pictureBox4.TabStop = false;
+            lblPokemon.AutoSize = true;
+            lblPokemon.BackColor = Color.Gainsboro;
+            lblPokemon.Location = new Point(706, 129);
+            lblPokemon.Name = "lblPokemon";
+            lblPokemon.Size = new Size(0, 25);
+            lblPokemon.TabIndex = 33;
+            // 
+            // lblSexo
+            // 
+            lblSexo.AutoSize = true;
+            lblSexo.BackColor = SystemColors.ControlLightLight;
+            lblSexo.Location = new Point(610, 166);
+            lblSexo.Name = "lblSexo";
+            lblSexo.Size = new Size(59, 25);
+            lblSexo.TabIndex = 32;
+            lblSexo.Text = "label4";
+            // 
+            // picIconPokemon
+            // 
+            picIconPokemon.ImageLocation = "string img = $\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png\"";
+            picIconPokemon.Location = new Point(54, 150);
+            picIconPokemon.Name = "picIconPokemon";
+            picIconPokemon.Size = new Size(279, 151);
+            picIconPokemon.TabIndex = 30;
+            picIconPokemon.TabStop = false;
+            picIconPokemon.Click += picIconPokemon_Click;
+            // 
+            // lblPeso
+            // 
+            lblPeso.AutoSize = true;
+            lblPeso.BackColor = SystemColors.ControlLightLight;
+            lblPeso.Location = new Point(606, 285);
+            lblPeso.Name = "lblPeso";
+            lblPeso.Size = new Size(0, 25);
+            lblPeso.TabIndex = 28;
+            // 
+            // lblAltura
+            // 
+            lblAltura.AutoSize = true;
+            lblAltura.BackColor = SystemColors.ControlLightLight;
+            lblAltura.Location = new Point(610, 245);
+            lblAltura.Name = "lblAltura";
+            lblAltura.Size = new Size(0, 25);
+            lblAltura.TabIndex = 27;
+            // 
+            // lbltype
+            // 
+            lbltype.AutoSize = true;
+            lbltype.BackColor = SystemColors.ControlLightLight;
+            lbltype.Location = new Point(610, 205);
+            lbltype.Name = "lbltype";
+            lbltype.Size = new Size(59, 25);
+            lbltype.TabIndex = 25;
+            lbltype.Text = "label5";
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.BackColor = Color.Gainsboro;
+            lblID.Location = new Point(502, 129);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(0, 25);
+            lblID.TabIndex = 24;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Gainsboro;
+            label3.Location = new Point(426, 205);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 25);
+            label3.TabIndex = 23;
+            label3.Text = "Tipo:";
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.Gainsboro;
-            label14.Location = new Point(433, 166);
+            label14.Location = new Point(426, 166);
             label14.Name = "label14";
             label14.Size = new Size(54, 25);
             label14.TabIndex = 18;
             label14.Text = "Sexo:";
             // 
-            // lblnome
-            // 
-            lblnome.AutoSize = true;
-            lblnome.BackColor = Color.Gainsboro;
-            lblnome.Location = new Point(699, 129);
-            lblnome.Name = "lblnome";
-            lblnome.Size = new Size(0, 25);
-            lblnome.TabIndex = 17;
-            // 
-            // lblid
-            // 
-            lblid.AutoSize = true;
-            lblid.BackColor = Color.Gainsboro;
-            lblid.Location = new Point(500, 129);
-            lblid.Name = "lblid";
-            lblid.Size = new Size(0, 25);
-            lblid.TabIndex = 16;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Gainsboro;
-            label1.Location = new Point(427, 129);
+            label1.Location = new Point(433, 129);
             label1.Name = "label1";
             label1.Size = new Size(32, 25);
             label1.TabIndex = 15;
@@ -202,7 +246,7 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Gainsboro;
-            label9.Location = new Point(433, 285);
+            label9.Location = new Point(426, 285);
             label9.Name = "label9";
             label9.Size = new Size(53, 25);
             label9.TabIndex = 11;
@@ -212,59 +256,11 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Gainsboro;
-            label8.Location = new Point(433, 245);
+            label8.Location = new Point(426, 245);
             label8.Name = "label8";
             label8.Size = new Size(63, 25);
             label8.TabIndex = 10;
             label8.Text = "Altura:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Gainsboro;
-            label7.Location = new Point(433, 205);
-            label7.Name = "label7";
-            label7.Size = new Size(51, 25);
-            label7.TabIndex = 9;
-            label7.Text = "Tipo:";
-            label7.Click += label7_Click;
-            // 
-            // lblpeso
-            // 
-            lblpeso.AutoSize = true;
-            lblpeso.BackColor = SystemColors.ControlLightLight;
-            lblpeso.Location = new Point(598, 285);
-            lblpeso.Name = "lblpeso";
-            lblpeso.Size = new Size(0, 25);
-            lblpeso.TabIndex = 7;
-            lblpeso.Click += lblpeso_Click;
-            // 
-            // lblTipo
-            // 
-            lblTipo.AutoSize = true;
-            lblTipo.BackColor = SystemColors.ControlLightLight;
-            lblTipo.Location = new Point(598, 205);
-            lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(0, 25);
-            lblTipo.TabIndex = 6;
-            // 
-            // lblAltura
-            // 
-            lblAltura.AutoSize = true;
-            lblAltura.BackColor = SystemColors.ControlLightLight;
-            lblAltura.Location = new Point(598, 245);
-            lblAltura.Name = "lblAltura";
-            lblAltura.Size = new Size(0, 25);
-            lblAltura.TabIndex = 5;
-            // 
-            // lblSexo
-            // 
-            lblSexo.AutoSize = true;
-            lblSexo.BackColor = SystemColors.ControlLightLight;
-            lblSexo.Location = new Point(598, 166);
-            lblSexo.Name = "lblSexo";
-            lblSexo.Size = new Size(0, 25);
-            lblSexo.TabIndex = 4;
             // 
             // bntPesquisar
             // 
@@ -280,47 +276,33 @@
             bntPesquisar.TabIndex = 1;
             bntPesquisar.Text = "Pesquisar";
             bntPesquisar.UseVisualStyleBackColor = false;
-            bntPesquisar.Click += bntPesquisar_Click;
+            bntPesquisar.Click += bntPesquisar_Click_1;
             // 
             // pictureBox3
             // 
-            pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Image = Properties.Resources.pn9wu54jm2i711;
             pictureBox3.Location = new Point(0, 0);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(850, 470);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 2;
+            pictureBox3.Size = new Size(100, 50);
+            pictureBox3.TabIndex = 31;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click_1;
             // 
-            // label2
+            // pokedex
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(408, 321);
-            label2.Name = "label2";
-            label2.Size = new Size(88, 25);
-            label2.TabIndex = 21;
-            label2.Text = "Descriçao";
-            // 
-            // Form1
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(144F, 144F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(850, 500);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
-            Text = "Form1";
+            Name = "pokedex";
+            Text = "pokedex";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picIconPokemon).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
@@ -332,22 +314,25 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button bntPesquisar;
-        private PictureBox pictureBox3;
-        private Label lblTipo;
-        private Label lblAltura;
-        private Label lblSexo;
         private Label label11;
         private Label label10;
         private Label label9;
         private Label label8;
-        private Label label7;
-        private Label lblpeso;
         private TextBox txtID;
         private Label label14;
         private Label lblnome;
         private Label lblid;
         private Label label1;
-        private PictureBox pictureBox4;
-        private Label label2;
+        private PictureBox pictureBox3;
+        private PictureBox picIconPokemon;
+        private Label la;
+        private Label lblPeso;
+        private Label lblAltura;
+        private Label label6;
+        private Label lblID;
+        private Label lblSexo;
+        private Label lblPokemon;
+        private Label lbltype;
+        private Label label3;
     }
 }
